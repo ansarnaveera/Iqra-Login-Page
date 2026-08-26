@@ -1,0 +1,587 @@
+/* ================================
+   BASIC RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* ================================
+   BACKGROUND IMAGE
+================================ */
+
+.background {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("ChatGPT\ Image\ Aug\ 25\,\ 2026\,\ 12_21_13\ AM.png");
+
+    background-size: cover;
+    background-position: center;
+
+    z-index: -2;
+}
+
+
+/* ================================
+   DARK / GLASS OVERLAY
+================================ */
+
+.background::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 35, 70, 0.18);
+
+    backdrop-filter: blur(1px);
+}
+
+
+/* ================================
+   LOGIN CARD
+================================ */
+
+.login-card {
+
+    width: 480px;
+
+    min-height: 700px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 22px;
+
+    padding: 38px 30px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+
+    animation: cardAppear 0.8s ease;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* ================================
+   CARD ANIMATION
+================================ */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo-container {
+
+    width: 345px;
+
+    margin: 0 auto 25px;
+
+    animation: logoAppear 1s ease;
+}
+
+.logo-container img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* ================================
+   LOGO ANIMATION
+================================ */
+
+@keyframes logoAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+h1 {
+
+    color: #203a5f;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   SUBTITLE
+================================ */
+
+.subtitle {
+
+    color: #4e6075;
+
+    font-size: 16px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   INPUT BOX
+================================ */
+
+.input-box {
+
+    width: 100%;
+
+    height: 62px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 17px;
+
+    margin-bottom: 18px;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+
+/* INPUT HOVER */
+
+.input-box:hover {
+
+    border-color: #0757a5;
+
+    box-shadow: 0 4px 15px rgba(0, 75, 145, 0.08);
+}
+
+
+/* INPUT FOCUS */
+
+.input-box:focus-within {
+
+    border-color: #0757a5;
+
+    box-shadow:
+        0 0 0 3px rgba(7, 87, 165, 0.12);
+}
+
+
+/* ================================
+   INPUT ICON
+================================ */
+
+.icon {
+
+    font-size: 20px;
+
+    margin-right: 14px;
+
+    opacity: 0.65;
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+.input-box input {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    color: #243b5a;
+
+    background: transparent;
+}
+
+
+.input-box input::placeholder {
+
+    color: #7d8ca3;
+}
+
+
+/* ================================
+   PASSWORD EYE
+================================ */
+
+.eye {
+
+    font-size: 18px;
+
+    color: #6c7d94;
+
+    cursor: pointer;
+
+    margin-left: 10px;
+}
+
+
+/* ================================
+   OPTIONS
+================================ */
+
+.options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 5px 2px 25px;
+
+    font-size: 14px;
+}
+
+
+/* REMEMBER ME */
+
+.options label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #314765;
+
+    cursor: pointer;
+}
+
+
+.options label input {
+
+    width: 19px;
+
+    height: 19px;
+
+    accent-color: #0757a5;
+
+    cursor: pointer;
+}
+
+
+/* FORGOT PASSWORD */
+
+.options a {
+
+    color: #0066d6;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.options a:hover {
+
+    color: #003d82;
+
+    text-decoration: underline;
+}
+
+
+/* ================================
+   LOGIN BUTTON
+================================ */
+
+.login-btn {
+
+    width: 100%;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #0757a5,
+        #003f82
+    );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px rgba(0, 70, 140, 0.25);
+}
+
+
+/* LOGIN BUTTON HOVER */
+
+.login-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 70, 140, 0.35);
+
+    background: linear-gradient(
+        135deg,
+        #0868c5,
+        #004d9d
+    );
+}
+
+
+/* LOGIN BUTTON CLICK */
+
+.login-btn:active {
+
+    transform: translateY(0);
+}
+
+
+/* ================================
+   DIVIDER
+================================ */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+
+.divider span {
+
+    height: 1px;
+
+    background: #d5dce5;
+
+    flex: 1;
+}
+
+
+.divider p {
+
+    color: #52657d;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   SIGN UP BUTTON
+================================ */
+
+.signup-btn {
+
+    width: 100%;
+
+    height: 60px;
+
+    border: 1.5px solid #0757a5;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #0757a5;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+
+/* SIGN UP HOVER */
+
+.signup-btn:hover {
+
+    background: #0757a5;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(0, 70, 140, 0.2);
+}
+
+
+/* ================================
+   BOTTOM TEXT
+================================ */
+
+.bottom-text {
+
+    color: #40546c;
+
+    font-size: 14px;
+
+    margin-top: 30px;
+
+    line-height: 1.6;
+}
+
+
+.bottom-text a {
+
+    color: #0066d6;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.bottom-text a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 600px) {
+
+    .login-card {
+
+        width: 92%;
+
+        min-height: auto;
+
+        padding: 30px 22px;
+    }
+
+
+    .logo-container {
+
+        width: 270px;
+    }
+
+
+    h1 {
+
+        font-size: 23px;
+    }
+
+
+    .subtitle {
+
+        font-size: 14px;
+    }
+
+
+    .input-box {
+
+        height: 56px;
+    }
+
+
+    .login-btn,
+    .signup-btn {
+
+        height: 55px;
+    }
+}
